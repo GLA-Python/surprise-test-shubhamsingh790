@@ -1,0 +1,19 @@
+def Expanding(r):
+    lst=[]
+    for i in range(1,r+1):
+        numbers=int(input(f"{i}. Enter here: "))
+        lst.append(numbers)
+    print("This is your list:",lst)
+    new_lst=[]
+    for i in range(1,len(lst)):
+        new_num=abs(lst[i]-lst[i-1])
+        new_lst.append(new_num)
+    print("This is your new list:",new_lst)
+    e=True
+    for i in range(1,len(new_lst)):
+        if new_lst[i]<=new_lst[i-1]:
+            e=False
+    return e
+    
+r=int(input("how many numbers would you like to list: "))
+print(Expanding(r))
